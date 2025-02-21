@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: 'mamba-campaigns'
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: mamba-campaigns
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mamba-campaigns
+      PGDATA: /data/postgres
