@@ -1,31 +1,23 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Campaign {
-  id         String         @id @default(uuid())
-  name       String
-  createdAt  DateTime       @default(now())
-  startDate  DateTime
-  endDate    DateTime
-  status     CampaignStatus
-  categoryId String
-  category   Category       @relation(fields: [categoryId], references: [id])
-
-  @@map("campaigns")
+generator client {
+  provider = "prisma-client-js"
 }
 
-model Category {
-  id        String     @id @default(uuid())
-  name      String     @unique
-  campaigns Campaign[]
+model Campaign {
+  id        String    @id @default(uuid())
+  name      String
+  createdAt DateTime  @default(now())
+  startDate DateTime
+  endDate   DateTime
+  status    String
+  category  String
+  deletedAt DateTime?
 
-  @@map("categories")
+  @@map("campaigns")
 }
 
 enum CampaignStatus {

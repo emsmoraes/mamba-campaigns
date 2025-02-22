@@ -1,7 +1,19 @@
-import { IsString, IsDate, IsEnum, IsUUID, Length } from 'class-validator';
+import { IsString, IsDate, IsEnum, Length } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { CampaignStatus } from '@prisma/client';
 import { Type } from 'class-transformer';
+
+enum CampaignStatus {
+  ATIVA = 'ATIVA',
+  PAUSADA = 'PAUSADA',
+  EXPIRADA = 'EXPIRADA',
+}
+
+enum CampaignCategory {
+  PROMOÇÃO = 'PROMOÇÃO',
+  LANÇAMENTO = 'LANÇAMENTO',
+  EVENTO = 'EVENTO',
+  OUTROS = 'OUTROS',
+}
 
 export class CreateCampaignDto {
   @ApiProperty({ example: 'Promoção de Verão', required: true })
@@ -21,9 +33,9 @@ export class CreateCampaignDto {
 
   @ApiProperty({ example: 'ATIVA', enum: CampaignStatus, required: true })
   @IsEnum(CampaignStatus)
-  status: CampaignStatus;
+  status: string;
 
-  @ApiProperty({ example: 'uuid', required: true })
-  @IsUUID()
-  categoryId: string;
+  @ApiProperty({ example: 'PROMOÇÃO', enum: CampaignCategory, required: true })
+  @IsEnum(CampaignCategory)
+  category: string; 
 }
