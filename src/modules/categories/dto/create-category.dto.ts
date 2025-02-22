@@ -7,5 +7,3 @@ export class CreateCategoryDto {
   @Length(3, 50)
   name: string;
 }
-
-
