@@ -10,8 +10,8 @@ export class CampaignRepository {
     name: string,
     startDate: Date,
     endDate: Date,
-    status: string, 
-    category: string, 
+    status: string,
+    category: string,
   ): Promise<Campaign> {
     return this.prisma.client.campaign.create({
       data: {

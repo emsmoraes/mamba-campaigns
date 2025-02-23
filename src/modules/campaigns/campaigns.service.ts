@@ -24,11 +24,17 @@ export class CampaignService {
       throw new BadRequestException('A data de início deve ser igual ou posterior à data atual');
     }
 
+    let status = createCampaignDto.status as CampaignStatus;
+
+    if (createCampaignDto.endDate < now) {
+      status = CampaignStatus.EXPIRADA;
+    }
+
     return this.campaignRepository.create(
       createCampaignDto.name,
       createCampaignDto.startDate,
       createCampaignDto.endDate,
-      createCampaignDto.status as CampaignStatus,
+      status,
       createCampaignDto.category,
     );
   }
