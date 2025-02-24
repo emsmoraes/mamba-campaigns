@@ -18,7 +18,7 @@ Para instalar o Mamba Campaigns API, siga os passos abaixo:
 ### 1. Clone o projeto do GitHub:
 
 ```
-git clone https://github.com/seu-usuario/mamba-campaigns.git
+git clone https://github.com/emsmoraes/mamba-campaigns.git
 ```
 
 ### 2. Entre na pasta do projeto:
