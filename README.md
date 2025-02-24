@@ -44,7 +44,7 @@ DATABASE_URL="postgresql://mamba-campaigns:root@localhost:5432/mamba-campaigns"
 
 ## 🐳 Executando com Docker Compose
 
-Caso prefira rodar o banco de dados via Docker, utilize o seguinte comando:
+Para criar o banco de dados, utilize o seguinte comando:
 
 ```
 docker-compose up -d
