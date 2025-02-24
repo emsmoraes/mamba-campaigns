@@ -8,7 +8,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão 20.9.0 ou superior do `<NodeJS>`
 - Você instalou a versão 2.39 ou superior do `<Git>`
-- Você tem o `<Docker e Docker Compose>` instalados
+- Você tem o `<Docker>` instalado e configurado
 - Você tem uma máquina `<Windows / Linux / Mac>`
 
 ## 🚀 Instalando
@@ -42,9 +42,9 @@ PORT=3000
 DATABASE_URL="postgresql://mamba-campaigns:root@localhost:5432/mamba-campaigns"
 ```
 
-## 🐳 Executando com Docker Compose
+## 🐳 Executando o Docker Compose
 
-Para criar o banco de dados, utilize o seguinte comando:
+Para criar o banco de dados com o Docker, utilize o seguinte comando:
 
 ```
 docker-compose up -d
