@@ -50,7 +50,7 @@ Para criar o banco de dados com o Docker, utilize o seguinte comando:
 docker-compose up -d
 ```
 
-Após a criação do compose, use <npx prisma migrate dev> para subir as migrações para o banco
+Após a criação do compose, use `<npx prisma migrate dev>` para subir as migrações para o banco
 
 ## ☕ Rodando a aplicação
 
